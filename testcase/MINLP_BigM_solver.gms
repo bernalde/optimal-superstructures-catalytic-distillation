@@ -1049,96 +1049,173 @@ zobj.scale=1e2;
 *                                Sección 20
 *                            Cotas en las variables
 *-------------------------------------------------------------------------------
-D.up=1;
-D.lo=0;
-hw.up=5;
-hs.up=1;
-hs.lo=0;
-htotal.up=200;
+*                                Sección 20
+*                            Cotas en las variables
+*-------------------------------------------------------------------------------
+*bounds
+D.up=0.3;
+D.lo=0.1;
+
+hw.up=0.1;
+hw.lo=0.0001;
+
+hs.up=0.3;
+hs.lo=0.1;
+
+htotal.up=10;
+
 at.lo=1e-6;
-at.up=5    ;
-ad.lo=1e-10;
-ad.up=1 ;
-lw.up=1 ;
+at.up=0.1;
+
+ad.lo=0.0001;
+ad.up=0.01;
+
+lw.up=1;
+
 A0.lo=1e-12;
-A0.up=1 ;
+A0.up=0.01;
+
+RR.lo(N,j)=1;
 RR.up(N,j)=10;
-RR.lo(N,j)=0;
-Qr.up(N,j)=10000;
-Qr.lo(N,j)=0;
-Qc.up(N,j)=50000;
-L.up(N,j,Net)=1000 ;
-V.up(N,j,Net)=1000 ;
-BR.up(N,j)=20;
-P.up(N,j,Net)= 15;
+
+Qr.up(N,j)=400;
+Qr.lo(N,j)=100;
+
+Qc.up(N,j)=900;
+
+L.up(N,j,Net)=200;
+V.up(N,j,Net)=200;
+
+BR.up(N,j)=10;
+
+P.up(N,j,Net)= 10;
+P.lo(N,j,Net)=Pop;
+
 zboil.up(N,j,comp,Net)=1.5;
+zboil.lo(N,j,comp,Net)=0.7;
+
 Zbut.up(N,j,Net)= 1.5;
+Zbut.lo(N,j,Net)= 0.5;
+
 Zeth.up(N,j,Net)= 1.5;
-Psat.up(N,j,comp,Net)=100000;
-Tcritm.up(N,j,Net)=1000000;
-rho.up(N,j,comp,Net)=100000000;
-rhoV.up(N,j,Net)=5000000;
-sigma.up(N,j,Net)=1000;
-tao_nrtl.up(N,j,comp,comp1,Net)    =10000;
-tao_nrtl.lo(N,j,comp,comp1,Net)    =-10000;
-g_nrtl.up(N,j,comp,comp1,Net)=10000;
-g_nrtl.lo(N,j,comp,comp1,Net)=-1000;
-gamma.up(N,j,comp,Net)=10000;
-gamma.lo(N,j,comp,Net)=-1000;
-Ketbe.lo(N,j,Net)=-100000;
-Ketbe.up(N,j,Net)=100000;
+Zeth.lo(N,j,Net)= 0.5;
+
+Psat.up(N,j,comp,Net)=100;
+
+tao_nrtl.up(N,j,comp,comp1,Net)    =5;
+tao_nrtl.lo(N,j,comp,comp1,Net)    =-5;
+
+g_nrtl.up(N,j,comp,comp1,Net)=2;
+g_nrtl.lo(N,j,comp,comp1,Net)=0;
+
+gamma.up(N,j,comp,Net)=50;
+gamma.lo(N,j,comp,Net)=0;
+
+Ketbe.lo(N,j,Net)=0;
+Ketbe.up(N,j,Net)=100;
+
 Krate.up(N,j,Net)=1000000000;
 Krate.lo(N,j,Net)=-10;
-Ka.up(N,j,Net)=10000;
-Rx.up(N,j,Net)=10000000000;
-Rx.lo(N,j,Net)=-10000000000;
-alphaEOS.up(N,j,comp,Net)=1000;
-aiEOS.up(N,j,comp,Net)=10;
-bEOS.up(N,j,Net)=10;
-aEOS.up(N,j,Net)=10;
-phi.up(N,j,comp,Net)=1000;
-HVi.up(N,j,comp,Net)=10000;
-HVi.lo(N,j,comp,Net)=-100000;
-HV.up(N,j,Net)=100000;
-HV.lo(N,j,Net)=-100000;
-depHvib.lo(N,j,comp,Net)=-10000;
-depHvib.up(N,j,comp,Net)=1000;
-HLi.lo(N,j,comp,Net)=-100000;
-HLi.up(N,j,comp,Net)=100000;
-HL.lo(N,j,Net)=-100000;
-HL.up(N,j,Net)=100000;
-HFB.lo(N,j,Net)=-10000;
-HFB.up(N,j,Net)=10000;
-HFE.lo(N,j,Net)=-100000;
-HFE.up(N,j,Net)=100000;
-far.up(N,j,Net)=1000;
-hD.up(N,j,Net)=10;
-DPL.up(N,j,Net)=100;
-DPS.up(N,j,Net)=10;
-DP.up(N,j,Net)=100;
-DPq.up(N,j,Net)=100;
-uhv.up(N,j,Net)=10000;
-unv.up(N,j,Net)=100;
-ul.up(N,j,Net)=1000;
-hcl.up(N,j,Net)=100;
-Csbf.up(N,j,Net)=1000;
-Lload.up(N,j,Net)=100;
-Ffactor.up(N,j,Net)=10000;
-dPcat.up(N,j,net)=100;
+Krate.scale(N,j,Net)=10000000;
+
+Ka.up(N,j,Net)=100;
+
+Rx.up(N,j,Net)=100;
+Rx.lo(N,j,Net)=-100000;
+Rx.scale(N,j,Net)=100000;
+
+alphaEOS.up(N,j,comp,Net)=5;
+aiEOS.up(N,j,comp,Net)=1e-3;
+aiEOS.lo(N,j,comp,Net)=1e-6;
+aiEOS.scale(N,j,comp,Net)=1e-4;
+
+bEOS.up(N,j,Net)=0.01;
+
+aEOS.up(N,j,Net)=1e-3;
+
+phi.up(N,j,comp,Net)=2;
+
+HVi.up(N,j,comp,Net)=1000;
+HVi.lo(N,j,comp,Net)=-1000;
+
+HV.up(N,j,Net)=1000;
+HV.lo(N,j,Net)=-1000;
+
+depHvib.lo(N,j,comp,Net)=-10;
+depHvib.up(N,j,comp,Net)=10;
+
+HLi.lo(N,j,comp,Net)=-1000;
+HLi.up(N,j,comp,Net)=1000;
+
+HL.lo(N,j,Net)=-1000;
+HL.up(N,j,Net)=1000;
+
+HFB.lo(N,j,Net)=-50;
+HFB.up(N,j,Net)=1;
+
+HFE.lo(N,j,Net)=-500;
+HFE.up(N,j,Net)=0;
+
+far.up(N,j,Net)=2;
+far.lo(N,j,Net)=0.1;
+
+hD.up(N,j,Net)=0.1;
+hD.lo(N,j,Net)=0.0001;
+
+DPL.up(N,j,Net)=0.1;
+
+DPS.up(N,j,Net)=0.01;
+
+DP.up(N,j,Net)=0.1;
+
+DPq.up(N,j,Net)=0.1;
+
+uhv.up(N,j,Net)=10;
+uhv.lo(N,j,Net)=0.4;
+
+hcl.up(N,j,Net)=0.1;
+hcl.lo(N,j,Net)=1e-6;
+
+Lload.up(N,j,Net)=0.008333;
+Ffactor.up(N,j,Net)=3.575;
+dPcat.up(N,j,net)=10;
 
 x.lo(N,j,comp,Net)= 0;
 x.up(N,j,comp,Net)= 100;
+
 y.lo(N,j,comp,Net)= 0;
 y.up(N,j,comp,Net)= 100;
+
 z.lo(N,j,Net)= 0.5 ;
 z.up(N,j,Net)=  1.3  ;
-Temp.lo(N,j,Net)= 200    ;
-Temp.up(N,j,Net)= 500  ;
-Tcritm.lo(N,j,Net)=400.9;
-rhoV.lo(N,j,Net)=Pop/(0.00008314*Temp.up(N,j,Net)*(Z.up(N,j,Net)));
+
+Temp.lo(N,j,Net)= 200;
+Temp.up(N,j,Net)= 417.89;
+
+Tcritm.up(N,j,Net)=600;
+Tcritm.lo(N,j,Net)=417.9;
+
 bEOS.lo(N,j,Net)=min(biEOS('iButene'),biEOS('Ethanol'),biEOS('nButene'),biEOS('ETBE'));
 aEOS.lo(N,j,Net)=1e-6;
-hcl.lo(N,j,Net)=1e-6;
+
+*Bounded flooding variables cause problems with DICOPT:
+unv.lo(N,j,Net)=0.01;
+unv.up(N,j,Net)=0.89;
+
+ul.up(N,j,Net)=30;
+ul.lo(N,j,Net)=0.001;
+
+rho.up(N,j,comp,Net)=25000;
+rho.lo(N,j,comp,Net)=8000;
+
+rhoV.up(N,j,Net)=500;
+rhoV.lo(N,j,Net)=Pop/(0.00008314*Temp.up(N,j,Net)*(Z.up(N,j,Net)));
+
+Csbf.up(N,j,Net)=0.2;
+Csbf.lo(N,j,Net)=0.1;
+
+sigma.up(N,j,Net)=0.03;
+sigma.lo(N,j,Net)=0.005;
 *-------------------------------------------------------------------------------
 *                                Sección 21
 *                            Solución del modelo

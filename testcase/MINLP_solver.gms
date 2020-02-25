@@ -1187,7 +1187,7 @@ Tcritm.lo(N,j,Net)=417.9;
 bEOS.lo(N,j,Net)=min(biEOS('iButene'),biEOS('Ethanol'),biEOS('nButene'),biEOS('ETBE'));
 aEOS.lo(N,j,Net)=1e-6;
 
-*Variables en las restricciones de inundacion que pueden generar problemas con DICPOT:
+*Bounded flooding variables cause problems with DICOPT:
 unv.lo(N,j,Net)=0.01;
 unv.up(N,j,Net)=0.89;
 
