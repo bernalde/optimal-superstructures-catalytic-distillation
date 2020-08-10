@@ -1,5 +1,5 @@
 # Optimal design of process superstructures: Catalytic distillation test case
-This repository includes the files of the manuscript Optimal design of superstructures for placing units and streams with multiple and ordered available locations. Part II: Rigorous design of catalytic distillation columns.
+This repository includes the files of the manuscript [Optimal design of superstructures for placing units and streams with multiple and ordered available locations. Part II: Rigorous design of catalytic distillation columns](https://doi.org/10.1016/j.compchemeng.2020.106845).
 
 The files included in this repository correspond to the Mixed-integer nonlinear optimization problem to optimally design a catalytic distillation column for producing Ethyl tert-butyl ether from ethanol and isobutane. The full description of this model can be found in the paper from [Bernal et al.](https://pubs.acs.org/doi/abs/10.1021/acs.iecr.7b04205). The optimization models and proposed algorithm are implemented in GAMS.
 
